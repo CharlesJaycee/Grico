@@ -268,36 +268,53 @@ figcaption {
     padding-right: 7rem;
 }
 
-figure {
-    margin: 0;
-}
-
-.image-container {
-    position: relative;
-    overflow: hidden;
+/* --- MEDIA STYLING (Image & Video side-by-side or stacked cleanly) --- */
+.media-box {
+    margin: 1.2rem 0;
     border-radius: 14px;
-    margin-top: 1.2rem;
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.destination-card img {
+.destination-img {
     width: 100%;
-    max-height: 420px;
+    height: 320px;
     object-fit: cover;
     display: block;
-    transition: transform 0.5s ease;
+    border-radius: 10px 10px 0 0;
 }
 
-.destination-card:hover img {
-    transform: scale(1.03);
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-top: 1rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+    background: #000;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    pointer-events: none; /* Allows smooth page scrolling */
 }
 
 figcaption {
     font-style: italic;
     color: #94a3b8;
-    margin-top: 0.9rem;
+    padding: 0.8rem;
     font-weight: 600;
-    font-size: 1.05rem;
+    font-size: 0.95rem;
+    background: rgba(10, 18, 11, 0.5);
+    margin: 0;
 }
 
 .card-footer-info {
